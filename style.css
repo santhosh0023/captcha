@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 150px;
+    background-color:whitesmoke;
+    height: 200px;
+    border-radius: 10px;
+  
+}
+h1{
+    text-align: center;
+}
+.captcha{
+    text-align: center;
+    margin: 20px;
+    font-size: 2rem;
+}
+#captcha_input{
+    height: 25px;
+    margin-right:  0 10px;
+}
+input:hover{
+    border-color:rgb(67, 183, 67);
+}
+#captcha_input ,button{
+    cursor: pointer;
+}
+
+button{
+    height: 25px;
+    border-radius: 5px;
+    background-color: rgb(67, 183, 67);
+}

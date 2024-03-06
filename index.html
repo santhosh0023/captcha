@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>captcha generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>captcha</h1>
+   <div class="container">
+    
+    <div class="container1">
+        <div class="captcha">efgh87</div>
+       <div class="input">
+        <input type="text" name="captcha_input" id="captcha_input">
+        <button id="submit">submit</button>
+       </div>
+    </div>
+   </div>
+   <script>
+    var captcha =document.querySelector(".captcha")
+    var captcha_input = document.querySelector("#captcha_input")
+    var submit =document.querySelector("#submit")
+    submit.addEventListener("click",function(){
+        if(captcha.textContent==captcha_input.value){
+            alert("captcha verifed successfully")
+        }
+        else{
+            alert("entered captcha mismatched")
+        }
+        captcha_input.value="";
+        captcha_input.focus();
+        randomstring =generatestring(6);
+        captcha.textContent=randomstring.trim();
+    }) ;
+    function generatestring(length){
+        const characters ='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+        let result='';
+    const charactersLength=characters.length;
+   for( let i=0;i<length;i++){
+    result+=characters.charAt(Math.floor(Math.random()*charactersLength));
+   }
+   return result;
+}
+
+   </script>
+    
+</body>
+</html>
